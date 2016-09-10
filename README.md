@@ -1,12 +1,11 @@
 #Sands\Validation
----
 
 Automatic controller validation for Laravel 5+
 
 ##Installation
 
 ```bash
-$ composer require sands\validation
+$ composer require sands/validation
 ```
 
 In `config/app.php` add `Sands\Validation\ValidationServiceProvider` inside the `providers` array:

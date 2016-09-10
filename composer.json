@@ -1,6 +1,6 @@
 {
     "name": "sands/validation",
-    "description": "Route Validation for Laravel 5+",
+    "description": "Automatic Controller Validation for Laravel 5+",
     "license": "MIT",
     "authors": [
         {
