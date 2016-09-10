@@ -1,0 +1,9 @@
+<?php
+namespace App\Validations;
+
+use Sands\Validation\BaseValidator;
+
+class ClassNameRules extends BaseValidator
+{
+Methods
+}

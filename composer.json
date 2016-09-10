@@ -1,0 +1,24 @@
+{
+    "name": "sands/validation",
+    "description": "Route Validation for Laravel 5+",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zulfa Juniadi bin Zulkifli",
+            "email": "zulfajuniadi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "5.*",
+        "illuminate/filesystem": "5.*",
+        "illuminate/validation": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sands\\Validation\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
