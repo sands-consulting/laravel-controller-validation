@@ -15,7 +15,7 @@ class ValidationMiddleware
      */
     public function handle($request, Closure $next, $rules = null)
     {
-        $validation = app('validation')->checkCurrentRoute();
+        $validation = app('sands.validation')->checkCurrentRoute();
         if ($validation && $validation->fails()) {
             if ($request->wantsJson()) {
                 return response()->json([

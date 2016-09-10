@@ -31,7 +31,7 @@ class ValidationServiceProvider extends ServiceProvider
         $this->commands($this->commands);
 
         // register singleton
-        app()->singleton('validation', function () {
+        app()->singleton('sands.validation', function () {
             return new Validation;
         });
     }
