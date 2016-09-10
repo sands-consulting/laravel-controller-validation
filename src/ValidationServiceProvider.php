@@ -34,5 +34,9 @@ class ValidationServiceProvider extends ServiceProvider
         app()->singleton('sands.validation', function () {
             return new Validation;
         });
+
+        app('events')->listen('sands.generator::MakeController', function ($controller) {
+            (new ValidationGenerator)->generate($controller, true);
+        });
     }
 }
