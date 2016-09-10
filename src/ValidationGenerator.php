@@ -1,6 +1,8 @@
 <?php
 namespace Sands\Validation;
 
+use Event;
+
 class ValidationGenerator
 {
     public function generate($controller, $resource = false)
@@ -17,6 +19,7 @@ class ValidationGenerator
         $filePath = $validationPath . DIRECTORY_SEPARATOR . $controller . 'Rules.php';
         file_put_contents($filePath, $contents);
 
+        Event::fire('sands.validation::MakeRules', $controller . 'Rules');
     }
 
     public function methods($resource = false)
