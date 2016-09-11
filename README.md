@@ -5,7 +5,7 @@ Automatic controller validation for Laravel 5+
 ##Installation
 
 ```bash
-$ composer require sands/validation
+$ composer require sands/laravel-controller-validation
 ```
 
 In `config/app.php` add `Sands\Validation\ValidationServiceProvider` inside the `providers` array:
@@ -18,7 +18,7 @@ In `config/app.php` add `Sands\Validation\ValidationServiceProvider` inside the 
 ]
 ```
 
-In `app\Http\Kernel.php` add `Sands\Validation\ValidationMiddleware` inside the `$routeMiddlware` array:
+In `app/Http/Kernel.php` add `Sands\Validation\ValidationMiddleware` inside the `$routeMiddlware` array:
 
 ```php
 protected $routeMiddleware = [
@@ -46,7 +46,7 @@ This command will generate a new file `UsersControllerRules.php` inside `app/Val
 
 
 
-The validation methods must return an array of [validation rules](https://laravel.com/docs/5.3/validation#available-validation-rules).
+The validation methods must return an array of [Laravel validation rules](https://laravel.com/docs/5.3/validation#available-validation-rules).
 
 Lastly, associate the validation rules to the controller as such:
 
@@ -109,10 +109,8 @@ If the request wants JSON as determined by `Request::wantsJson()`, the middlewar
 By default the validation rules will be validated against all user inputs as returned by `app('request')->all()`. If you want to override the data validated, you can define the method in the validation rules file. For example if we want to only validate the username when the `store` validation method is called inside the UsersControllerRules, we can define a `storeData ` method as following:
 
 ```php
-// app\Validations\UsersControllerRules.php
-
+// app/Validations/UsersControllerRules.php
 ...
-
 protected function storeData($request, $params)
 {
     return $request->only('username');
